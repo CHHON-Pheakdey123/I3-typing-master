@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Test | Typing Master</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            color: #222;
+        }
+
+        nav.main-nav {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+            background: linear-gradient(90deg, #2a7ae2 70%, #185ca1 100%);
+            padding: 16px 0;
+            border-radius: 8px;
+            margin: 24px auto 36px auto;
+            max-width: 700px;
+            box-shadow: 0 2px 12px rgba(42, 122, 226, 0.10);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: box-shadow 0.2s;
+        }
+
+        nav.main-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 10px 22px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+        }
+
+        nav.main-nav a:hover,
+        nav.main-nav a:focus {
+            background: #fff;
+            color: #2a7ae2;
+            box-shadow: 0 2px 8px rgba(42, 122, 226, 0.08);
+        }
+
+        nav.main-nav a.active {
+            background: #fff;
+            color: #2a7ae2;
+            box-shadow: 0 2px 8px rgba(42, 122, 226, 0.12);
+            cursor: default;
+        }
+
+        .typing-test-container {
+            max-width: 540px;
+            margin: 48px auto 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(42, 122, 226, 0.10);
+            padding: 36px 28px 32px 28px;
+            text-align: center;
+        }
+
+        .typing-test-container h1 {
+            color: #2a7ae2;
+            font-size: 2em;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .typing-test-container p {
+            color: #185ca1;
+            font-size: 1.08em;
+            margin-bottom: 18px;
+        }
+
+        .test-text {
+            background: #f7faff;
+            border: 2px solid #2a7ae2;
+            border-radius: 6px;
+            padding: 18px 14px;
+            font-size: 1.15em;
+            color: #234;
+            margin-bottom: 22px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 90px;
+            font-size: 1.08em;
+            border: 2px solid #2a7ae2;
+            border-radius: 6px;
+            padding: 14px;
+            color: #185ca1;
+            background: #f7faff;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(42, 122, 226, 0.06);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            resize: vertical;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #185ca1;
+            box-shadow: 0 0 0 2px #2a7ae233;
+        }
+
+        .btn.btn-primary {
+            background: linear-gradient(90deg, #2a7ae2 70%, #185ca1 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.08em;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(42, 122, 226, 0.10);
+            cursor: pointer;
+            padding: 12px 32px;
+            margin-top: 20px;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+
+        .btn.btn-primary:hover,
+        .btn.btn-primary:focus {
+            background: #185ca1;
+            box-shadow: 0 4px 16px rgba(42, 122, 226, 0.18);
+            transform: translateY(-2px) scale(1.03);
+            color: #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 10px 28px;
+            background: #2a7ae2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #185ca1;
+        }
+
+        .btn.dashboard {
+            background: #fff;
+            color: #2a7ae2;
+            border: 2px solid #2a7ae2;
+            margin-left: 10px;
+        }
+
+        .btn.dashboard:hover {
+            background: #2a7ae2;
+            color: #fff;
+        }
+
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 28px;
+        }
+
+        footer .main-footer {
+            margin-top: 40px;
+            padding: 20px 0 10px 0;
+            background: #f7faff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(42, 122, 226, 0.05);
+        }
+
+        footer .main-footer p {
+            text-align: center;
+            color: #888;
+            font-size: 0.98em;
+        }
+
+        @media (max-width: 700px) {
+            .typing-test-container {
+                padding: 22px 8px 18px 8px;
+            }
+
+            nav.main-nav {
+                max-width: 98vw;
+                margin: 12px 1vw 24px 1vw;
+            }
+
+            .button-row {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+    <script>
+        let startTime, endTime;
+        let testText = "The quick brown fox jumps over the lazy dog.";
+
+        function startTimer() {
+            if (!startTime) {
+                startTime = new Date();
+            }
+        }
+
+        function goToResult(event) {
+            event.preventDefault();
+            endTime = new Date();
+
+            // Get user input and calculate stats
+            const userInput = document.getElementById('userInput').value.trim();
+            const timeTakenSec = (endTime - startTime) / 1000;
+            const timeTakenMin = timeTakenSec / 60;
+
+            // Calculate WPM
+            const wordsTyped = userInput.length > 0 ? userInput.split(/\s+/).length : 0;
+            const wpm = timeTakenMin > 0 ? Math.round(wordsTyped / timeTakenMin) : 0;
+
+            // Calculate accuracy
+            const originalWords = testText.split(/\s+/);
+            const inputWords = userInput.split(/\s+/);
+            let correct = 0;
+            for (let i = 0; i < Math.min(originalWords.length, inputWords.length); i++) {
+                if (originalWords[i] === inputWords[i]) correct++;
+            }
+            const accuracy = Math.round((correct / originalWords.length) * 100);
+
+            // Format time as mm:ss
+            const min = Math.floor(timeTakenSec / 60);
+            const sec = Math.floor(timeTakenSec % 60);
+            const timeStr = `${min}:${sec.toString().padStart(2, '0')} min`;
+
+            // Store results for dashboard (history)
+            let results = JSON.parse(localStorage.getItem('results') || '[]');
+            results.push({
+                wpm: isNaN(wpm) ? 0 : wpm,
+                accuracy: isNaN(accuracy) ? 0 : accuracy,
+                time: timeStr,
+                date: new Date().toLocaleString()
+            });
+            localStorage.setItem('results', JSON.stringify(results));
+
+            // Store latest for testResult.html
+            localStorage.setItem('wpm', isNaN(wpm) ? 0 : wpm);
+            localStorage.setItem('accuracy', isNaN(accuracy) ? 0 : accuracy);
+            localStorage.setItem('time', timeStr);
+
+            window.location.href = "testResult.html";
+        }
+        // Optional: Clear textarea on load for Try Again
+        window.onload = function () {
+            var input = document.getElementById('userInput');
+            if (input) input.value = '';
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="typingTest.html" class="active">Typing Test</a>
+    </nav>
+    <div class="typing-test-container">
+        <h1>Typing Test</h1>
+        <p>Start typing the text below:</p>
+        <div class="test-text">
+            The quick brown fox jumps over the lazy dog.
+        </div>
+        <form onsubmit="goToResult(event)">
+            <textarea id="userInput" rows="4" cols="50" placeholder="Start typing here..."
+                oninput="startTimer()"></textarea>
+            <button type="submit" class="btn btn-primary" style="margin-top:20px;">Submit</button>
+        </form>
+        <div class="button-row" style="margin-top: 28px;">
+            <a href="typingTest.html" class="btn">Try Again</a>
+            <a href="testResult.html" class="btn dashboard">View Dashboard</a>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Typing Master. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
