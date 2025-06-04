@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Result | Typing Master</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            color: #222;
+        }
+        nav.main-nav {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+            background: linear-gradient(90deg, #2a7ae2 70%, #185ca1 100%);
+            padding: 16px 0;
+            border-radius: 8px;
+            margin: 24px auto 36px auto;
+            max-width: 700px;
+            box-shadow: 0 2px 12px rgba(42, 122, 226, 0.10);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: box-shadow 0.2s;
+        }
+        nav.main-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 10px 22px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+        }
+        nav.main-nav a:hover, nav.main-nav a:focus {
+            background: #fff;
+            color: #2a7ae2;
+            box-shadow: 0 2px 8px rgba(42,122,226,0.08);
+        }
+        nav.main-nav a.active {
+            background: #fff;
+            color: #2a7ae2;
+            box-shadow: 0 2px 8px rgba(42,122,226,0.12);
+            cursor: default;
+        }
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(42,122,226,0.10);
+            padding: 36px 28px;
+            text-align: center;
+        }
+        h1 {
+            color: #2a7ae2;
+            margin-bottom: 18px;
+        }
+        .result {
+            font-size: 1.2em;
+            margin: 18px 0;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 10px 28px;
+            background: #2a7ae2;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #185ca1;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // Get the latest results from localStorage
+            const wpm = localStorage.getItem('wpm');
+            const accuracy = localStorage.getItem('accuracy');
+            const time = localStorage.getItem('time');
+            // Show the results if available, else show default
+            document.getElementById('wpm').textContent = wpm !== null ? wpm : '0';
+            document.getElementById('accuracy').textContent = accuracy !== null ? accuracy + '%' : '0%';
+            document.getElementById('time').textContent = time !== null ? time : '0:00 min';
+        }
+    </script>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="aboutUs.html">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="typingTest.html" class="active">Typing Test</a>
+    </nav>
+    <div class="container">
+        <h1>Test Result</h1>
+        <div class="result">
+            <p><strong>Words Per Minute (WPM):</strong> <span id="wpm">0</span></p>
+            <p><strong>Accuracy:</strong> <span id="accuracy">0%</span></p>
+            <p><strong>Time Taken:</strong> <span id="time">0:00 min</span></p>
+        </div>
+        <a href="typingTest.html" class="btn">Try Again</a>
+    </div>
+</body>
+</html>
