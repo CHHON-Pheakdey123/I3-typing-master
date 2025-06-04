@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Typing Master</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        nav.main-nav {
+            display: flex;
+            gap: 28px;
+            justify-content: center;
+            background: linear-gradient(90deg, #2a7ae2 70%, #185ca1 100%);
+            padding: 16px 0;
+            border-radius: 8px;
+            margin: 24px auto 36px auto;
+            max-width: 700px;
+            box-shadow: 0 2px 12px rgba(42, 122, 226, 0.10);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: box-shadow 0.2s;
+        }
+        nav.main-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 10px 22px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            letter-spacing: 0.5px;
+        }
+        nav.main-nav a:hover, nav.main-nav a:focus {
+            background: #fff;
+            color: #2a7ae2;
+            box-shadow: 0 2px 8px rgba(42,122,226,0.08);
+        }
+        nav.main-nav a.active {
+            background: #fff;
+            color: #2a7ae2;
+            box-shadow: 0 2px 8px rgba(42,122,226,0.12);
+            cursor: default;
+        }
+        .header {
+            text-align: center;
+            margin: 32px auto 24px auto;
+            padding: 16px 0 8px 0;
+        }
+        .header h1 {
+            color: #2a7ae2;
+            font-size: 2.3em;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .header p {
+            color: #185ca1;
+            font-size: 1.18em;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(42,122,226,0.10);
+        }
+        .about-content p {
+            line-height: 1.7;
+            font-size: 1.08em;
+        }
+        .about-content em {
+            color: #185ca1;
+            font-weight: 600;
+        }
+        footer .main-footer {
+            margin-top: 40px;
+            padding: 20px 0 10px 0;
+            background: #f7faff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(42,122,226,0.05);
+        }
+        footer .main-footer p {
+            text-align: center;
+            color: #888;
+            font-size: 0.98em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="aboutUs.html" class="active">About Us</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="typingTest.html">Typing Test</a>
+    </nav>
+    <header class="header">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Learn more about Typing Master and our mission</p>
+        </div>
+    </header>
+    <main>
+        <div class="about-content">
+            <p>
+                Welcome to <strong>Typing Master</strong>! Our mission is to help users of all ages improve their typing speed and accuracy in a fun and interactive way.
+            </p>
+            <p>
+                We believe that typing is an essential skill in today’s digital world. Our platform offers engaging lessons, real-time feedback, and progress tracking to make learning efficient and enjoyable.
+            </p>
+            <p>
+                Whether you are a student, professional, or just looking to boost your productivity, Typing Master is here to support your journey. Thank you for choosing us!
+            </p>
+            <p>
+                <em>Happy Typing!</em>
+            </p>
+        </div>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Typing Master. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
