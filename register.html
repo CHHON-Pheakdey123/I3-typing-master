@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Master</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="typing-test.html">Typing Test</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <h1>Typing Master</h1>
+            <p>Create your account to start improving your typing skills</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <form class="registration-form" action="/register" method="POST" id="registerForm">
+                <h2>Create Account</h2>
+                
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="password-requirements">
+                        Password must be at least 8 characters long
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                        Register
+                    </button>
+                </div>
+                
+                <div id="register-error" style="color:red; text-align:center; margin-bottom:1rem; display:none;"></div>
+                
+                <div class="login-link">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>Made with ❤️ by the Typing Master Team. Practice every day and master your typing skills!</p>
+        </div>
+    </footer>
+    <script src="js/register.js"></script>
+</body>
+</html>
